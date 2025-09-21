@@ -1,0 +1,11 @@
+gui controls 
+------------
+reset
+lock
+underlay
+
+todo:
+1. levels
+2. label-by text
+
+3. connect to llm

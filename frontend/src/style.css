@@ -1,0 +1,234 @@
+#app {
+	font-size: 12px;
+}
+#begin-screen {
+	position: absolute;
+	display: block;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 255);
+	z-index: 1000;
+	color: rgb(48, 48, 48);
+}
+
+#opening-gif {
+	width: 450px;
+	height: 450px;
+}
+
+#div3d {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 0;
+}
+
+#menu-heading {
+	color: rgb(121, 120, 120);
+}
+
+#gui-panel {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 200px;
+	height: 100vh;
+	padding: 15px;
+	background-color: rgba(0, 0, 0, 0.85);
+	color: white;
+	font-family: sans-serif;
+	box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+	transition: transform 0.3s ease;
+	opacity: 0.95;
+	z-index: 10;
+	overflow: visible;
+}
+
+#gui-panel.collapsed {
+	transform: translateX(-100%);
+}
+
+#gui-panel.collapsed + #collapse-btn-left {
+	left: 0;
+}
+
+#collapse-btn-left {
+	position: fixed;
+	top: 10px;
+	left: 200px; /* aligns to right edge of expanded panel */
+	width: 50px;
+	height: 50px;
+	background-color: rgb(0, 0, 0);
+	color: white;
+	border: none;
+	border-radius: 0 5px 5px 0;
+	cursor: pointer;
+	transition: left 0.3s ease;
+	z-index: 20;
+}
+
+#control-buttons {
+	display: flex;
+	gap: 10px;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.dropdown-buttons {
+	width: 100px;
+	/* font-size: 12px; */
+}
+
+.list-group-item {
+	cursor: pointer;
+}
+
+/* right panel */
+.side-panel {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	width: 500px;
+	height: 350px;
+	color: white;
+	background-color: rgba(0, 0, 0, 0.1);
+	box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+	transition: right 0.75s ease;
+	padding: 1rem;
+	overflow-y: auto;
+}
+
+.right {
+	right: 0px; /* hidden */
+}
+
+.right.open {
+	right: -250px; /* visible */
+}
+
+#collapse-btn-right {
+	position: fixed;
+	top: 10px;
+	right: 500px; /* aligns to right edge of expanded panel */
+	width: 50px;
+	height: 50px;
+	background-color: rgb(0, 0, 0);
+	color: white;
+	border: none;
+	border-radius: 0 5px 5px 0;
+	cursor: pointer;
+	transition: right 0.75s ease;
+	z-index: 1000;
+}
+
+#rightPanel.open {
+	transform: translateX(100%);
+}
+
+#rightPanel.open + #collapse-btn-right {
+	right: 0px;
+}
+
+/* Toast container */
+#toast-container {
+	position: fixed;
+	top: 20px;
+	left: 50%;
+	transform: translateX(-50%);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	gap: 10px;
+	z-index: 9999;
+}
+
+/* Toast style */
+.toast {
+	min-width: 200px;
+	padding: 12px 16px;
+	background: #333;
+	color: #fff;
+	border-radius: 8px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+	opacity: 0;
+	transform: translateY(-20px);
+	transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.toast.show {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+table {
+	border-collapse: collapse; /* merges adjacent borders */
+	width: 80%;
+	margin: 20px auto;
+	font-family: Arial, sans-serif;
+	opacity: 0.95;
+}
+
+th,
+td {
+	border: 1px solid #444; /* border around each cell */
+	padding: 10px 15px;
+	text-align: center;
+}
+
+th {
+	background-color: #f2f2f2;
+	font-weight: bold;
+}
+
+tr:nth-child(even) td {
+	background-color: #fafafa; /* striped rows */
+}
+
+tr:hover td {
+	background-color: #e8f4ff; /* highlight on hover */
+}
+
+#selection {
+	position: fixed;
+	border: 1px dashed #00ffcc;
+	background: rgba(0, 255, 200, 0.1);
+	pointer-events: none;
+	display: none;
+}
+
+#question-div {
+	position: fixed; /* sticks to bottom of screen */
+	bottom: 20px; /* aligns with bottom edge */
+	left: var(--left-width, 250px); /* match your left panel width */
+	right: var(--right-width, 300px); /* match your right panel width */
+	height: 60px;
+	display: flex;
+	align-items: center;
+	z-index: 500; /* keep above 3D view */
+	color: white;
+}
+
+#input-question {
+	flex: 1; /* expands input */
+	margin-right: 10px;
+	height: 50px;
+}
+
+#info-panel {
+	position: fixed; /* sticks to bottom of screen */
+	top: 10px; /* aligns with bottom edge */
+	left: var(--left-width, 250px); /* match your left panel width */
+	right: var(--right-width, 300px); /* match your right panel width */
+	height: 60px;
+	display: flex;
+	align-items: center;
+	z-index: 500; /* keep above 3D view */
+	color: white;
+}

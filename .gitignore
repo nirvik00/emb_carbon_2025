@@ -1,0 +1,37 @@
+.venv/
+.env
+full_lca_results_COPY.csv
+Kentwood-Community Center_2025_Jason.ifc
+EC_DB_PWxTYLin_v2.xlsx - RDHBS_AllAssembly_ECv2.csv
+*.ifc
+react-three/
+.venv/
+node_modules/
+__pycache__/
+.idea/
+*.ifc
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

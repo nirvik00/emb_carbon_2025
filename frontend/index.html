@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/png" href="/goodboy_256.png" />
+		<!-- <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" /> -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>model-query</title>
+	</head>
+	<body>
+		<div id="begin-screen">
+			<h1>loading...</h1>
+			<br />
+			<img id="opening-gif" src="/assets/Gravity.gif" />
+		</div>
+		<script>
+			var _scene = null; // udpated in init3d.js
+			var _camera = null; // udpated in init3d.js
+			var _renderer = null; // udpated in init3d.js
+			var _controls = null; // udpated in init3d.js
+			var _width = window.innerWidth;
+			var _height = window.innerHeight;
+			var _container = null; // updated in main.js
+			var _main_box = null; // updated in main.js
+			var _transformVec = null; // updated in main.js
+			var _meshArr = [];
+			var _lineArr = [];
+			var _mesh_selected = [];
+			var _temp_mesh_selected = [];
+			var _element_type_selected = null; //
+			var _global_ui_locked = false;
+			var _project_from_db = "office";
+			var _selection_box = null;
+
+			function animatedBeginSreen() {
+				const div = document.getElementById("begin-screen");
+				div.style.display = "none";
+			}
+
+			function beginScreen() {
+				setTimeout(animatedBeginSreen, 500);
+			}
+
+			beginScreen();
+		</script>
+		<div id="app">
+			<div id="toast-container"></div>
+			<!--    <div id="selection"></div>-->
+			<!-- LEFT PANEL -->
+			<div id="gui-panel">
+				<div id="control-buttons">
+					<h5 id="menu-heading">
+						<i class="fs-1 bi bi-wrench-adjustable"></i>
+					</h5>
+				</div>
+				<br />
+				<div id="control-buttons">
+					<!-- buildings from db added in init3d.js -->
+					<div
+						class="dropdown buttons"
+						data-bs-toggle="tooltip"
+						title="select building from db"
+					>
+						<button
+							class="btn btn-primary dropdown-toggle dropdown-buttons"
+							data-bs-toggle="dropdown"
+							id="building-db-button"
+						>
+							Buildings
+						</button>
+						<div class="dropdown-menu">
+							<ul class="list-group" id="building-list"></ul>
+						</div>
+						<p id="building-from-db-info"></p>
+					</div>
+					<!-- buttons on the left-->
+					<button
+						class="ns-buttons"
+						data-bs-toggle="tooltip"
+						title="reset the scene (Escape)"
+						id="reset-scene"
+					>
+						<i class="fs-5 bi-arrow-repeat"></i>
+					</button>
+					<button
+						class="buttons"
+						data-bs-toggle="tooltip"
+						title="isolate / lock selections"
+						id="lock-selection"
+					>
+						<i class="fs-5 bi-lock"></i>
+					</button>
+					<button
+						class="buttons"
+						data-bs-toggle="tooltip"
+						title="hide element"
+						id="hide-element"
+					>
+						<i class="fs-5 bi-eye-slash"></i>
+					</button>
+					<button
+						class="buttons"
+						data-bs-toggle="tooltip"
+						title="show element"
+						id="show-element"
+					>
+						<i class="fs-5 bi-eye"></i>
+					</button>
+					<button
+						class="buttons"
+						data-bs-toggle="tooltip"
+						title="manipulate the selection box to control the scene"
+						id="selection-box"
+					>
+						<i class="fs-5 bi-box"></i>
+					</button>
+					<button
+						class="buttons"
+						data-bs-toggle="tooltip"
+						title="transformations to focus selected element(s)"
+						id="move-cam-to-selected"
+					>
+						<i class="fs-5 bi-box-arrow-in-up-left"></i>
+					</button>
+					<button
+						class="buttons"
+						data-bs-toggle="tooltip"
+						title="zoom extents"
+						id="zoom-extents"
+					>
+						<i class="fs-5 bi bi-arrows-angle-contract"></i>
+					</button>
+					<button
+						class="buttons"
+						data-bs-toggle="tooltip"
+						title="number of elements in scene"
+						id="num-elements"
+					>
+						<i class="fs-5 bi bi-123"></i>
+					</button>
+					<br />
+					<!-- levels added in init3d.js -->
+					<div
+						class="dropdown buttons"
+						data-bs-toggle="tooltip"
+						title="select elements by level"
+					>
+						<button
+							class="btn btn-primary dropdown-toggle dropdown-buttons"
+							data-bs-toggle="dropdown"
+							id="select-level"
+						>
+							Levels
+						</button>
+						<div class="dropdown-menu">
+							<ul class="list-group" id="level-list"></ul>
+						</div>
+						<p class="dropdown-label" id="level-name-selected"></p>
+					</div>
+					<!-- element types added in init3d.js -->
+					<div
+						class="dropdown buttons"
+						data-bs-toggle="tooltip"
+						title="select element types"
+					>
+						<button
+							class="btn btn-primary dropdown-toggle dropdown-buttons"
+							data-bs-toggle="dropdown"
+							id="element-type"
+						>
+							Elements
+						</button>
+						<div class="dropdown-menu">
+							<ul class="list-group" id="element-list"></ul>
+						</div>
+						<p class="dropdown-label" id="element-type-selected">
+							SPACES
+						</p>
+					</div>
+					<!-- end left panel -->
+				</div>
+				<div
+					class="control-buttons"
+					data-bs-toggle="tooltip"
+					title="opacity of mesh"
+				>
+					<label for="opacity-range" class="form-label"
+						>Opacity</label
+					>
+					<input
+						type="range"
+						class="form-range"
+						id="opacity-range"
+						min="0.01"
+						max="1.0"
+						step="0.01"
+						value="0.25"
+					/>
+				</div>
+			</div>
+			<button
+				data-bs-toggle="tooltip"
+				title="show/hide controls menu"
+				id="collapse-btn-left"
+			>
+				<i
+					id="collapseLeftIcon"
+					class="fs-5 bi-caret-left-square-fill"
+				></i>
+				<i
+					id="openLeftIcon"
+					class="fs-5 bi-caret-right-square-fill"
+					hidden
+				></i>
+			</button>
+
+			<!-- 3D VIEW -->
+			<div id="div3d"></div>
+
+			<!-- RIGHT PANEL -->
+			<div id="rightPanel" class="side-panel right">
+				<!--        <i class="fs-1 bi bi-card-list"></i>-->
+				<div id="div-mesh-info">
+					<table class="table table-borderless" id="mesh-info-table">
+						<thead>
+							<tr>
+								<th scope="col">num</th>
+								<th scope="col">name</th>
+								<th scope="col">level</th>
+								<th scope="col">area</th>
+							</tr>
+						</thead>
+					</table>
+				</div>
+			</div>
+			<button
+				data-bs-toggle="tooltip"
+				title="show/hide data menu"
+				id="collapse-btn-right"
+				class="toggle-btn"
+			>
+				<i
+					id="openRightIcon"
+					class="fs-5 bi-caret-right-square-fill"
+				></i>
+				<i
+					id="collapseRightIcon"
+					class="fs-5 bi-caret-left-square-fill"
+					hidden
+				></i>
+			</button>
+
+			<!-- footer question -->
+			<div class="nav-fill card-footer" id="question-div">
+				<input
+					type="text"
+					name="input-question"
+					id="input-question"
+					placeholder="ask your question"
+				/>
+				<!--        <div class="form-check form-switch">-->
+				<!--            <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">-->
+				<!--            <label class="form-check-label" for="switchCheckDefault">Highlight(On) / Isolate (Off) </label>-->
+				<!--        </div>-->
+				<button class="btn btn-primary" id="submit-query-button">
+					Submit
+				</button>
+			</div>
+
+			<!-- header info panel -->
+			<div class="nav-fill card-header" id="info-panel">
+				<p class="info-p" id="mouseover-name"></p>
+				<p class="info-p" id="mouseover-guid"></p>
+			</div>
+		</div>
+		<script type="module" src="/src/handleLeftPanelHtmlGui.js"></script>
+		<script type="module" src="/src/handleRightPanelHtmlGui.js"></script>
+		<script type="module" src="/src/main.js"></script>
+		<script type="module" src="/src/connectLLM.js"></script>
+	</body>
+</html>

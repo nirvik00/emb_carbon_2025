@@ -1,0 +1,321 @@
+[
+  {
+    "GlobalId": "3295POxJHCnfpYDmBFvIKq",
+    "Type": "IfcRoof",
+    "Properties": {
+      "Pset_QuantityTakeOff.Reference": "",
+      "Pset_QuantityTakeOff.id": "72",
+      "Pset_RoofCommon.Reference": "",
+      "Pset_RoofCommon.IsExternal": "True",
+      "Pset_RoofCommon.id": "78"
+    }
+  },
+  {
+    "GlobalId": "3295POxJHCnfpYDmBFvIKp",
+    "Type": "IfcRoof",
+    "Properties": {
+      "Pset_QuantityTakeOff.Reference": "",
+      "Pset_QuantityTakeOff.id": "100",
+      "Pset_RoofCommon.Reference": "",
+      "Pset_RoofCommon.IsExternal": "True",
+      "Pset_RoofCommon.id": "101"
+    }
+  },
+  {
+    "GlobalId": "3295POxJHCnfpYDmBFvIKo",
+    "Type": "IfcRoof",
+    "Properties": {
+      "Pset_QuantityTakeOff.Reference": "",
+      "Pset_QuantityTakeOff.id": "124",
+      "Pset_RoofCommon.Reference": "",
+      "Pset_RoofCommon.IsExternal": "True",
+      "Pset_RoofCommon.id": "125"
+    }
+  },
+  {
+    "GlobalId": "3295POxJHCnfpYDmBFvIKn",
+    "Type": "IfcRoof",
+    "Properties": {
+      "Pset_QuantityTakeOff.Reference": "",
+      "Pset_QuantityTakeOff.id": "176",
+      "Pset_RoofCommon.Reference": "",
+      "Pset_RoofCommon.IsExternal": "True",
+      "Pset_RoofCommon.id": "177"
+    }
+  },
+  {
+    "GlobalId": "3295POxJHCnfpYDmBFvIKm",
+    "Type": "IfcRoof",
+    "Properties": {
+      "Pset_QuantityTakeOff.Reference": "",
+      "Pset_QuantityTakeOff.id": "271",
+      "Pset_RoofCommon.Reference": "",
+      "Pset_RoofCommon.IsExternal": "True",
+      "Pset_RoofCommon.id": "272"
+    }
+  },
+  {
+    "GlobalId": "3295POxJHCnfpYDmBFvIKl",
+    "Type": "IfcRoof",
+    "Properties": {
+      "Pset_QuantityTakeOff.Reference": "",
+      "Pset_QuantityTakeOff.id": "345",
+      "Pset_RoofCommon.Reference": "",
+      "Pset_RoofCommon.IsExternal": "True",
+      "Pset_RoofCommon.id": "346"
+    }
+  },
+  {
+    "GlobalId": "3295POxJHCnfpYDmBFvIKk",
+    "Type": "IfcRoof",
+    "Properties": {
+      "Pset_QuantityTakeOff.Reference": "",
+      "Pset_QuantityTakeOff.id": "384",
+      "Pset_RoofCommon.Reference": "",
+      "Pset_RoofCommon.IsExternal": "True",
+      "Pset_RoofCommon.id": "385"
+    }
+  },
+  {
+    "GlobalId": "3295POxJHCnfpYDmBFvIKj",
+    "Type": "IfcRoof",
+    "Properties": {
+      "Pset_QuantityTakeOff.Reference": "",
+      "Pset_QuantityTakeOff.id": "435",
+      "Pset_RoofCommon.Reference": "",
+      "Pset_RoofCommon.IsExternal": "True",
+      "Pset_RoofCommon.id": "436"
+    }
+  },
+  {
+    "GlobalId": "3295POxJHCnfpYDmBFvIKi",
+    "Type": "IfcRoof",
+    "Properties": {
+      "Pset_QuantityTakeOff.Reference": "",
+      "Pset_QuantityTakeOff.id": "9521",
+      "Pset_RoofCommon.Reference": "",
+      "Pset_RoofCommon.IsExternal": "True",
+      "Pset_RoofCommon.id": "9522"
+    }
+  },
+  {
+    "GlobalId": "3295POxJHCnfpYDmBFvIKh",
+    "Type": "IfcRoof",
+    "Properties": {
+      "Pset_QuantityTakeOff.Reference": "",
+      "Pset_QuantityTakeOff.id": "9732",
+      "Pset_RoofCommon.Reference": "",
+      "Pset_RoofCommon.IsExternal": "True",
+      "Pset_RoofCommon.id": "9733"
+    }
+  },
+  {
+    "GlobalId": "3295POxJHCnfpYDmBFvIKg",
+    "Type": "IfcRoof",
+    "Properties": {
+      "Pset_QuantityTakeOff.Reference": "",
+      "Pset_QuantityTakeOff.id": "9827",
+      "Pset_RoofCommon.Reference": "",
+      "Pset_RoofCommon.IsExternal": "True",
+      "Pset_RoofCommon.id": "9828"
+    }
+  },
+  {
+    "GlobalId": "3295POxJHCnfpYDmBFvIKf",
+    "Type": "IfcRoof",
+    "Properties": {
+      "Pset_QuantityTakeOff.Reference": "",
+      "Pset_QuantityTakeOff.id": "9878",
+      "Pset_RoofCommon.Reference": "",
+      "Pset_RoofCommon.IsExternal": "True",
+      "Pset_RoofCommon.id": "9879"
+    }
+  },
+  {
+    "GlobalId": "3295POxJHCnfpYDmBFvIKe",
+    "Type": "IfcRoof",
+    "Properties": {
+      "Pset_QuantityTakeOff.Reference": "",
+      "Pset_QuantityTakeOff.id": "9918",
+      "Pset_RoofCommon.Reference": "",
+      "Pset_RoofCommon.IsExternal": "True",
+      "Pset_RoofCommon.id": "9919"
+    }
+  },
+  {
+    "GlobalId": "3295POxJHCnfpYDmBFvIKd",
+    "Type": "IfcRoof",
+    "Properties": {
+      "Pset_QuantityTakeOff.Reference": "",
+      "Pset_QuantityTakeOff.id": "10031",
+      "Pset_RoofCommon.Reference": "",
+      "Pset_RoofCommon.IsExternal": "True",
+      "Pset_RoofCommon.id": "10032"
+    }
+  },
+  {
+    "GlobalId": "3295POxJHCnfpYDmBFvIKc",
+    "Type": "IfcRoof",
+    "Properties": {
+      "Pset_QuantityTakeOff.Reference": "",
+      "Pset_QuantityTakeOff.id": "10127",
+      "Pset_RoofCommon.Reference": "",
+      "Pset_RoofCommon.IsExternal": "True",
+      "Pset_RoofCommon.id": "10128"
+    }
+  },
+  {
+    "GlobalId": "3295POxJHCnfpYDmBFvIKb",
+    "Type": "IfcRoof",
+    "Properties": {
+      "Pset_QuantityTakeOff.Reference": "",
+      "Pset_QuantityTakeOff.id": "10179",
+      "Pset_RoofCommon.Reference": "",
+      "Pset_RoofCommon.IsExternal": "True",
+      "Pset_RoofCommon.id": "10180"
+    }
+  },
+  {
+    "GlobalId": "3295POxJHCnfpYDmBFvIKa",
+    "Type": "IfcRoof",
+    "Properties": {
+      "Pset_QuantityTakeOff.Reference": "",
+      "Pset_QuantityTakeOff.id": "10218",
+      "Pset_RoofCommon.Reference": "",
+      "Pset_RoofCommon.IsExternal": "True",
+      "Pset_RoofCommon.id": "10219"
+    }
+  },
+  {
+    "GlobalId": "3295POxJHCnfpYDmBFvIKZ",
+    "Type": "IfcRoof",
+    "Properties": {
+      "Pset_QuantityTakeOff.Reference": "",
+      "Pset_QuantityTakeOff.id": "10269",
+      "Pset_RoofCommon.Reference": "",
+      "Pset_RoofCommon.IsExternal": "True",
+      "Pset_RoofCommon.id": "10270"
+    }
+  },
+  {
+    "GlobalId": "3295POxJHCnfpYDmBFvIKY",
+    "Type": "IfcRoof",
+    "Properties": {
+      "Pset_QuantityTakeOff.Reference": "",
+      "Pset_QuantityTakeOff.id": "10365",
+      "Pset_RoofCommon.Reference": "",
+      "Pset_RoofCommon.IsExternal": "True",
+      "Pset_RoofCommon.id": "10366"
+    }
+  },
+  {
+    "GlobalId": "3295POxJHCnfpYDmBFvIKX",
+    "Type": "IfcRoof",
+    "Properties": {
+      "Pset_QuantityTakeOff.Reference": "",
+      "Pset_QuantityTakeOff.id": "10405",
+      "Pset_RoofCommon.Reference": "",
+      "Pset_RoofCommon.IsExternal": "True",
+      "Pset_RoofCommon.id": "10406"
+    }
+  },
+  {
+    "GlobalId": "3295POxJHCnfpYDmBFvIKW",
+    "Type": "IfcRoof",
+    "Properties": {
+      "Pset_QuantityTakeOff.Reference": "",
+      "Pset_QuantityTakeOff.id": "17539",
+      "Pset_RoofCommon.Reference": "",
+      "Pset_RoofCommon.IsExternal": "True",
+      "Pset_RoofCommon.id": "17540"
+    }
+  },
+  {
+    "GlobalId": "3295POxJHCnfpYDmBFvIKV",
+    "Type": "IfcRoof",
+    "Properties": {
+      "Pset_QuantityTakeOff.Reference": "",
+      "Pset_QuantityTakeOff.id": "17591",
+      "Pset_RoofCommon.Reference": "",
+      "Pset_RoofCommon.IsExternal": "True",
+      "Pset_RoofCommon.id": "17592"
+    }
+  },
+  {
+    "GlobalId": "3295POxJHCnfpYDmBFvIKU",
+    "Type": "IfcRoof",
+    "Properties": {
+      "Pset_QuantityTakeOff.Reference": "",
+      "Pset_QuantityTakeOff.id": "17615",
+      "Pset_RoofCommon.Reference": "",
+      "Pset_RoofCommon.IsExternal": "True",
+      "Pset_RoofCommon.id": "17616"
+    }
+  },
+  {
+    "GlobalId": "3295POxJHCnfpYDmBFvIKT",
+    "Type": "IfcRoof",
+    "Properties": {
+      "Pset_QuantityTakeOff.Reference": "",
+      "Pset_QuantityTakeOff.id": "17638",
+      "Pset_RoofCommon.Reference": "",
+      "Pset_RoofCommon.IsExternal": "True",
+      "Pset_RoofCommon.id": "17639"
+    }
+  },
+  {
+    "GlobalId": "3295POxJHCnfpYDmBFvIKS",
+    "Type": "IfcRoof",
+    "Properties": {
+      "Pset_QuantityTakeOff.Reference": "",
+      "Pset_QuantityTakeOff.id": "17678",
+      "Pset_RoofCommon.Reference": "",
+      "Pset_RoofCommon.IsExternal": "True",
+      "Pset_RoofCommon.id": "17679"
+    }
+  },
+  {
+    "GlobalId": "3295POxJHCnfpYDmBFvIKR",
+    "Type": "IfcRoof",
+    "Properties": {
+      "Pset_QuantityTakeOff.Reference": "",
+      "Pset_QuantityTakeOff.id": "17774",
+      "Pset_RoofCommon.Reference": "",
+      "Pset_RoofCommon.IsExternal": "True",
+      "Pset_RoofCommon.id": "17775"
+    }
+  },
+  {
+    "GlobalId": "3295POxJHCnfpYDmBFvIKQ",
+    "Type": "IfcRoof",
+    "Properties": {
+      "Pset_QuantityTakeOff.Reference": "",
+      "Pset_QuantityTakeOff.id": "17859",
+      "Pset_RoofCommon.Reference": "",
+      "Pset_RoofCommon.IsExternal": "True",
+      "Pset_RoofCommon.id": "17860"
+    }
+  },
+  {
+    "GlobalId": "3295POxJHCnfpYDmBFvIKP",
+    "Type": "IfcRoof",
+    "Properties": {
+      "Pset_QuantityTakeOff.Reference": "",
+      "Pset_QuantityTakeOff.id": "17882",
+      "Pset_RoofCommon.Reference": "",
+      "Pset_RoofCommon.IsExternal": "True",
+      "Pset_RoofCommon.id": "17883"
+    }
+  },
+  {
+    "GlobalId": "3295POxJHCnfpYDmBFvIKO",
+    "Type": "IfcRoof",
+    "Properties": {
+      "Pset_QuantityTakeOff.Reference": "",
+      "Pset_QuantityTakeOff.id": "17914",
+      "Pset_RoofCommon.Reference": "",
+      "Pset_RoofCommon.IsExternal": "True",
+      "Pset_RoofCommon.id": "17915"
+    }
+  }
+]
