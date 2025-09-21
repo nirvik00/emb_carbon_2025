@@ -160,7 +160,7 @@ def get_data_parametric2(elem: str = Path(description="building element", exampl
 
 @router.get("/kentwood/element/{elem}")
 def get_data_parametric3(elem: str = Path(description="building element", example="walls")):
-    print(elem)
+    # print(elem)
     collection = db["kentwood2"]
     if elem == "slabs":
         query = {"element_type": "IfcSlab"}

@@ -18,6 +18,8 @@ import {
 	addBuildingsFromDb,
 } from "./addHtmlElements";
 
+import {colorGradation} from "./geomUtils.js";
+
 // globals for proj
 const _clock = new THREE.Clock();
 let _timer = 0;
@@ -92,10 +94,9 @@ document.addEventListener("keydown", (evt) => {
 		// resetModel(); // file: handleUI.js
 		showToast("Escape pressed- key map disabled");
 	}
-	// if (evt.key === "c") {
-	// 	console.log(_camera.position);
-	// 	console.log(_camera.rotation);
-	// }
+	if (evt.key === "c") {
+		colorGradation() // geomutils.js
+	}
 });
 
 function updateWindow() {
@@ -126,7 +127,6 @@ function render() {
 	if (!_ui_locked && _ui_lock_process) {
 		_ui_lock_process = false;
 	}
-
 	if (controlLeftButtonsToggle[0] === true) {
 		resetModel(_camera, _scene, _meshArr, _lineArr, _controls, _main_box); // file: handleUI.js
 		controlLeftButtonsToggle[0] = false;

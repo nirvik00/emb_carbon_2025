@@ -128,3 +128,15 @@ export async function rePositionCamera() {
 	_controls.target.copy(new THREE.Vector3(0, 0, 0));
 	_controls.update();
 }
+
+// from geom.js addbuildingKentwood()
+// from init3d.js -> on key press 'c'
+export function colorGradation(){
+	for(let i = 0; i < _meshArr.length; i++) {
+		const me = _meshArr[i];
+		let emb = me.emb_car_per_area
+		// console.log(emb)
+		const re = emb * 4 + 100;
+		me.material.color=  new THREE.Color("rgb("+re+",0,0)");
+	}
+}

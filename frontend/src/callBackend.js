@@ -1,6 +1,6 @@
 import axios from "axios";
 import * as THREE from "three";
-import { addSpaces, addBuildingElement } from "./geom.js";
+import {addSpaces, addBuildingElement, addBuildingElementKentwood} from "./geom.js";
 import {
 	clearScene,
 	getBox,
@@ -80,7 +80,12 @@ export async function getBuildingElements(elementType) {
 		let data = res.data.building_elements;
 		//
 		addLevelsToHtml(res.data.unique_levels);
-		await addBuildingElement(data); // file = geom.js
+		if (buildingFromDb !== "kentwood") {
+			await addBuildingElement(data); // file = geom.js
+		}else{
+			await addBuildingElementKentwood(data); // file = geom.js
+		}
+		// await addBuildingElement(data); // file = geom.js
 		const end = performance.now();
 		const timeTaken = (end - start).toFixed(2);
 		showToast(
@@ -105,6 +110,13 @@ export async function getBuildingElements(elementType) {
 		console.log(
 			`Request completed in ${timeTaken} milliseconds, data=${data.length}`
 		);
-		await addBuildingElement(data); // file = geom.js
+		console.log(buildingFromDb)
+		if (buildingFromDb !== "kentwood") {
+			await addBuildingElement(data); // file = geom.js
+		}else{
+			await addBuildingElementKentwood(data); // file = geom.js
+		}
 	}
 }
+
+

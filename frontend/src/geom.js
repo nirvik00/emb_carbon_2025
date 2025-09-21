@@ -16,7 +16,10 @@ import {
 	getLinesForMesh,
 	check,
 	rePositionCamera,
+	colorGradation,
 } from "./geomUtils";
+
+import axios from 'axios';
 
 import { getData } from "./callBackend.js";
 
@@ -179,4 +182,93 @@ export async function addBuildingElement(data) {
 	}
 	// adding to scene, camera postision updated in geomUtils.js - rePositionCamera
 	await rePositionCamera();
+}
+
+
+export async function addBuildingElementKentwood(data) {
+	// clearScene()
+	for (let i = 0; i < data.length; i++) {
+		if (
+			data[i].guid === "2Fyy0AqID87fAozzcQhaal" ||
+			data[i].element_type.includes("IfcCovering")
+		) {
+			continue;
+		}
+		let elem = data[i];
+		let vertices = elem.vertices;
+		let faces = elem.faces;
+		const geometry = new THREE.BufferGeometry();
+		geometry.setAttribute(
+			"position",
+			new THREE.Float32BufferAttribute(vertices, 3)
+		);
+		geometry.setIndex(faces);
+		geometry.computeVertexNormals();
+		// materials from config.js - loaded directly in index.html
+		let material = new THREE.MeshPhongMaterial({color: "rgb(255,0,0)"});
+		let me = new THREE.Mesh(geometry, material);
+		try {
+			if (data[i].element_type.includes("IfcWall")) {
+				me.material = wallMaterial;
+				me.elementType = "wall";
+			} else if (data[i].element_type.includes("IfcDoor")) {
+				me.material = doorMaterial;
+				me.elementType = "door";
+			} else if (data[i].element_type.includes("IfcWindow")) {
+				me.material = windowMaterial;
+				me.elementType = "window";
+			} else if (data[i].element_type.includes("IfcSlab")) {
+				me.material = slabMaterial;
+				me.elementType = "floor";
+			} else if (
+				data[i].element_type.includes("IfcRoof") ||
+				data[i].element_type.includes("IfcCovering")
+			) {
+				me.material = roofMaterial;
+				me.elementType = "roof";
+			} else {
+				me.elementType = "unknown";
+			}
+		} catch (err) {
+			me.elementType = "unknown";
+		}
+		me.number = i;
+		me.spaceName = data[i].product_name;
+		me.spaceFullName = data[i].product_name;
+		me.level = data[i].level;
+		me.area = data[i].area;
+		me.spaceId = data[i].guid;
+		try {
+			let arr = me.spaceName.split(":")
+			let spaceIdFromSpaceName = arr[arr.length - 1];
+			const {area, emb_car_per_area} = await getDataFromEmbodiedCarbon(spaceIdFromSpaceName);
+			me.area = area;
+			me.emb_car_per_area = emb_car_per_area;
+		} catch (err) {
+			// console.log(err)
+		}
+		me.guid = data[i].guid;
+		const b2 = new THREE.Box3().setFromObject(me);
+		_main_box.union(b2);
+		_meshArr.push(me);
+		_scene.add(me);
+	}
+	// colorGradation(); // geomutils
+	// adding to scene, camera position updated in geomUtils.js - rePositionCamera
+	await rePositionCamera();
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+async function getDataFromEmbodiedCarbon(num) {
+	const API_URL = "http://127.0.0.1:8000"
+	let buildingFromDb = document
+		.getElementById("building-from-db-info")
+		.textContent.toLowerCase();
+	let url = `${API_URL}/db/${buildingFromDb}/get/${num}`;
+	let res = await axios(url);
+	let data = res.data;
+	let area = data[6]
+	let emb_car_per_area = data[7]
+	return {area, emb_car_per_area};
 }
