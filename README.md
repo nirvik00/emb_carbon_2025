@@ -1,4 +1,5 @@
 presented at Boston hackathon 2025
+<br/>
 ingest 3d bim model
 discretize geometry + metadata
 demo:
